@@ -1,0 +1,13 @@
+.banner{
+    background-image: url('../assets/girl-kickboxer.jpg');
+    width: calc(100% - 50px);
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0 25px;
+    color: antiquewhite;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    position: relative;
+
+}
