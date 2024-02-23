@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/ultimate-combat-hub/static/css/main.6d22feb4.css",
+    "main.js": "/ultimate-combat-hub/static/js/main.5ab64b77.js",
+    "static/js/787.8cf52469.chunk.js": "/ultimate-combat-hub/static/js/787.8cf52469.chunk.js",
+    "static/media/girl-kickboxer.jpg": "/ultimate-combat-hub/static/media/girl-kickboxer.f5e537fa78e588ff0d67.jpg",
+    "static/media/logo1.png": "/ultimate-combat-hub/static/media/logo1.8a14204f17f47d2a28f3.png",
+    "static/media/logo.svg": "/ultimate-combat-hub/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/ultimate-combat-hub/index.html",
+    "main.6d22feb4.css.map": "/ultimate-combat-hub/static/css/main.6d22feb4.css.map",
+    "main.5ab64b77.js.map": "/ultimate-combat-hub/static/js/main.5ab64b77.js.map",
+    "787.8cf52469.chunk.js.map": "/ultimate-combat-hub/static/js/787.8cf52469.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6d22feb4.css",
+    "static/js/main.5ab64b77.js"
+  ]
+}
