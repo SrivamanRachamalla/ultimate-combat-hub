@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {link} from "react"
 import { Modal, ModalBody, ModalBodyProps, ModalHeader, Button, modal, ModalFooter } from 'reactstrap';
 import { Input, Col, Label, Form, Row, FormGroup } from 'reactstrap'
 import axios from 'axios';
@@ -17,6 +18,10 @@ function Project1(props) {
   const [collapsed, setCollapsed] = useState(true);
   const [modal, setModal] = useState(false);
   const [Regiaterationmodal, setRegistrationModal] = useState(false);
+  // const loginHandler = () => {
+  //   alert("ok its working")
+
+  // }
   const [loggedIn, setLoggedIn] = useState(false);
   const [user, setUser] = useState({
     name: '', 
@@ -63,7 +68,7 @@ function Project1(props) {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      let res = await axios.get(`http://localhost:5001/login/${formdata.email}/${formdata.password}`)
+      let res = await axios.get(`http://localhost:5002/login/${formdata.email}/${formdata.password}`)
       console.log(res)
       setModal(!modal);
       setLoggedIn(true);
@@ -82,7 +87,7 @@ function Project1(props) {
     e.preventDefault()
     try {
       if (formdata.password === formdata.confirmpassword) {
-        let res = await axios.post('http://localhost:5001/register', formdata)
+        let res = await axios.post('http://localhost:5002/register', formdata)
         console.log(res)
         if (res.status === 200) {
           setRegistrationModal(!Regiaterationmodal)
@@ -118,7 +123,7 @@ function Project1(props) {
 
   return (
     <div>
-      <Navbar color="faded" light className='fixed-top'>
+      <Navbar color="faded" light className='fixed-top' >
         <NavbarBrand href="/" className="me-auto">
           <img src='https://tse4.mm.bing.net/th?id=OIP.mT8ARtWDXJaY_oMq0cd_cQHaHa&pid=Api&P=0&h=220' style={{ height: "10vh", width: "10vh" }}>
           </img>

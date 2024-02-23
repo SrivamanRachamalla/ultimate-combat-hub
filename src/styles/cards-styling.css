@@ -20,7 +20,7 @@
     /* height: 50%; */
     /* margin-bottom: 20px; */
     margin-top: 0;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
      margin-left: 300px; 
     /* margin: 5px; */
     padding: 10px;
@@ -50,4 +50,39 @@
     background-color: #00cba6;
     margin-right: 30px;
     margin-left: 30px;
+    /* display: flex; */
 }
+.smcard{
+    width: 40%;
+    height: 10px;
+    margin-right: 500px;
+}
+.cardmoti{
+    margin-left: 200px;
+    margin-right: 100px;
+    width: 900px;
+    height: 290px;
+    margin-bottom: 100px;
+    position: relative;
+}
+.cardimaged{
+    width: 250px;
+    height: 230px;
+    /* position: absolute; */
+}
+.smcard1{
+    margin-left: 500px;
+    width: 50%;
+    height: 500px;
+    position: absolute;
+}
+.smcard3{
+    width: 40%;
+    height: 10px;
+    margin-right: 500px;
+    margin-left: 500px;
+    margin-bottom: 400px;
+    position: absolute;
+    justify-content: center;
+}
+

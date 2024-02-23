@@ -1,9 +1,12 @@
 import React from "react"
 import { useState, useEffect } from 'react';
+import { Table } from 'reactstrap';
+import { modal, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { CardColumns, Card, CardBody, CardGroup, CardImg, CardSubtitle, CardText, CardTitle, Button } from 'reactstrap'
 import { Popover, PopoverBody, PopoverHeader, PopoverItem, UncontrolledPopover } from 'reactstrap';
 import { QRCodeSVG } from "qrcode.react";
 import axios from 'axios';
+import ProjectQr from "./ProjectQr";
 
 
 function ProjectPage4() {
@@ -14,14 +17,16 @@ function ProjectPage4() {
     const [PopoverItem, setPopoverItem] = useState(false);
     const [arr, setArr] = useState([]);
     const [popoverOpen, setPopoverOpen] = useState(false);
+    const [modal, setModal] = useState(false);
 
 
     const togglePopover = (e) => setPopoverOpen(!popoverOpen);
 
 
     const toggle = (e) => {
-        // e.preventDefault();
+        e.preventDefault();
         setPopoverItem(!PopoverItem);
+        setModal(!modal);
     }
 
 
@@ -29,7 +34,7 @@ function ProjectPage4() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                let response = await axios.get("http://localhost:5001/fetch");
+                let response = await axios.get("http://localhost:5002/fetch");
                 console.log(response.data);
                 setArr(response.data || []);
             } catch (err) {
@@ -42,92 +47,145 @@ function ProjectPage4() {
 
 
     return (
-        
+
         <div className="cardsbackground">
-        <div className="cards-styling">
+            <div className="cards-styling">
 
 
 
-            <CardColumns
-                style={{
-                    width: '18rem'
-                }}
-            >
-                {arr.map((item) =>
-                (<Card className="card-item" key={item.id}>
-                    <div className="card-2">
-                        <>
-                            <span>
-                                <p/>
-                                <h3>Be  Joyfull to Learn {item.name}</h3>
-                                {item.name} training develops strength, power, agility, and helps to improve their balance.
-                                coordination, and reaction time.It need consistent practice and develop your personality.{item.name}can also keep mind focus and helps as an therapy 
-                                {/* Functional training develops strength, power, agility, and helps to improve their balance, coordination, and reaction time. */}
-                            </span>
+                <CardColumns
+                    style={{
+                        width: '18rem'
+                    }}
+                >
+                    {arr.map((item) =>
+                    (<Card className="card-item" key={item.id}>
+                        <div className="card-2">
+                            <>
+                                <span>
+                                    <p />
+                                    <h3>Be  Joyfull to Learn {item.name}</h3>
+                                    {item.name} training develops strength, power, agility, and helps to improve their balance.
+                                    coordination, and reaction time.It need consistent practice and develop your personality.{item.name}can also keep mind focus and helps as an therapy
+                                    {/* Functional training develops strength, power, agility, and helps to improve their balance, coordination, and reaction time. */}
+                                </span>
 
-                            <div>
-                                <Button color="light"
-                                    id="Popover1"
-                                    type="button"
-                                >
-                                    payment details of BOXING
-                                </Button>
-                                <Popover
-                                    flip
-                                    target="Popover1"
-                                    toggle={function noRefCheck() { }}
-                                >
-                                    <PopoverHeader>
-                                        Popover Title
-                                    </PopoverHeader>
-                                    <PopoverBody>
-                                        Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-                                    </PopoverBody>
-                                </Popover>
-                            </div>
-                            <div >
-                                <br />
-                                please watch some of our videos
-                                <br />
-                                to know in deatil
-                                <br />
-                                <Button >
-                                    <span>lesson-videos</span>
-                                </Button>
-                            </div>
+                                <div>
+                                    <Button
+                                        id="UncontrolledPopover"
+                                        type="button"
+                                    >
+                                        Payment Details {item.name}
+                                    </Button>
+                                    <UncontrolledPopover
+                                        placement="bottom"
+                                        target="UncontrolledPopover"
+                                    >
+                                        <PopoverHeader>
 
-                        </>
-                    </div>
-                    <CardImg
-                        alt="Card image cap"
-                        src={item.image}
-                        top
-                        width="100%"
-                    />
-                    <CardBody>
-                        {/* <QRCodeSVG value={item.name} /> */}
-                        <CardTitle tag="h5">
-                            {item.name}
-                        </CardTitle>
-                        <CardSubtitle
+                                        </PopoverHeader>
+                                        <PopoverBody>
+                                            {/* <QRCodeSVG value={<ProjectQr/>} /> */}
 
-                            className="mb-2 text-muted"
-                            tag="h6"
-                        >
-                            {item.subtitle}
-                        </CardSubtitle>
-                        <CardText>
-                            {item.description}
-                        </CardText>
-                        <Button>
-                            Button
-                        </Button>
-                    </CardBody>
-                    
-                </Card>)
-                )}
+                                            <Table>
 
-                {/*                 
+                                                <tbody key={item.id}>
+
+                                                    <tr key={item.id}>
+                                                        <td>COURSE TIME</td>
+                                                        <td>{item.time1}</td>
+                                                        <td>PRICE</td>
+                                                        <td>{item.price1}</td>
+                                                        <QRCodeSVG value={item.name} />
+
+                                                    </tr>
+                                                    <tr key={item.id}>
+                                                        <td>COURSE TIME</td>
+                                                        <td>{item.time2}</td>
+                                                        <td>PRICE</td>
+                                                        <td>{item.price2}</td>
+                                                        <QRCodeSVG value={item.name} />
+                                                    </tr>
+                                                    <tr>
+                                                        <td>COURSE TIME</td>
+                                                        <td>{item.time3}</td>
+                                                        <td>PRICE</td>
+                                                        <td>{item.price3}</td>
+                                                        <QRCodeSVG value={item.name} />
+                                                    </tr>
+                                                    <tr key={item.id}>
+                                                        <td>COURSE TIME</td>
+                                                        <td>{item.time4}</td>
+                                                        <td>PRICE</td>
+                                                        <td>{item.price4}</td>
+                                                        <QRCodeSVG value={item.name} />
+                                                    </tr>
+
+                                                </tbody>
+                                            </Table>
+                                        </PopoverBody>
+                                    </UncontrolledPopover>
+                                </div>
+                                <div >
+                                    <br />
+                                    please watch some of our videos
+                                    <br />
+                                    to know in detail
+                                    <br />
+                                    {/* <Button key={item.id} > */}
+                                    <div>
+                                        <Button color="danger" onClick={toggle}>
+                                            Related-videos
+                                        </Button>
+                                        <Modal
+                                            isOpen={modal}
+                                            modalTransition={{ timeout: 700 }}
+                                            backdropTransition={{ timeout: 1300 }}
+                                            toggle={toggle}
+                                            className={item.id}
+                                        >
+                                            <ModalHeader toggle={toggle}>explore videos</ModalHeader>
+                                            <ModalBody >
+                                                <iframe width="460" height="315" src="https://www.youtube.com/embed/LNfAwWk33nI?si=wtSnhUYqaog4kNQP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                            </ModalBody>
+
+                                        </Modal>
+                                    </div>
+                                    {/* </Button> */}
+                                </div>
+
+                            </>
+                        </div>
+                        <CardImg
+                            alt="Card image cap"
+                            src={item.image}
+                            top
+                            width="100%"
+                        />
+                        <CardBody>
+                            {/* <QRCodeSVG value={item.name} /> */}
+                            <CardTitle tag="h5">
+                                {item.name}
+                            </CardTitle>
+                            <CardSubtitle
+
+                                className="mb-2 text-muted"
+                                tag="h6"
+                            >
+                                {item.subtitle}
+                            </CardSubtitle>
+                            <CardText>
+                                {item.description}
+                            </CardText>
+                            <Button>
+                                Button
+                            </Button>
+                        </CardBody>
+
+                    </Card>)
+                    )}
+
+                    {/*                 
                     <Card>
                         <CardBody>
                             <CardTitle tag="h5">
@@ -147,7 +205,7 @@ function ProjectPage4() {
                             </Button>
                         </CardBody>
                     </Card> */}
-                {/* <Card>
+                    {/* <Card>
                         <CardImg
                             alt="Card image cap"
                             src="https://picsum.photos/256/186"
@@ -172,8 +230,8 @@ function ProjectPage4() {
                             </Button>
                         </CardBody>
                 </Card> */}
-            </CardColumns>
-        </div>
+                </CardColumns>
+            </div>
         </div>
     )
 }

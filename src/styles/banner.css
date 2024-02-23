@@ -1,4 +1,5 @@
 .banner{
+    /* margin-top: 300px; */
     background-image: url('../assets/girl-kickboxer.jpg');
     width: calc(100% - 50px);
     height: 500px;
