@@ -4,27 +4,27 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Project1 from './Project1';
-import ProjectPage2 from './ProjectPage2';
-import Project3 from './Project3';
-import ProjectPage4 from './ProjectPage4';
-import ProjectMd from './ProjectMd';
+// import Project1 from './Project1';
+// import ProjectPage2 from './ProjectPage2';
+// import Project3 from './Project3';
+// import ProjectPage4 from './ProjectPage4';
+// import ProjectMd from './ProjectMd';
+// // import ProjectQr from './ProjectQr';
+// import Project1Bg from './Project1Bg';
 // import ProjectQr from './ProjectQr';
-import Project1Bg from './Project1Bg';
-import ProjectQr from './ProjectQr';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
-    <Project1/>
+    {/* <Project1/>
     <ProjectPage2/>
     <Project3/>
     <ProjectPage4/>
     <ProjectMd/>
     <Project1Bg/>
-    <ProjectQr/>
+    <ProjectQr/> */}
   </React.StrictMode>
 
 );
